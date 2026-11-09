@@ -6,17 +6,17 @@ Una web para descubrir videojuegos y guardar tus favoritos. Desarrollada con Rea
 
 Instala Node.js 22.12 o superior. Abre una terminal en `cookie-game`:
 
-```bash
+
 npm ci
 npm run dev
-```
+
 
 Abre la dirección que muestra Vite. Para compilar y revisar la versión de producción:
 
-```bash
+
 npm run build
 npm run preview
-```
+
 
 # Rutas
 

@@ -1,42 +1,20 @@
-# Cookie Game
 
-Una web para descubrir videojuegos y guardar tus favoritos. Desarrollada con React, Vite, React Router y Bootstrap. Conserva los colores y las imágenes locales de la landing original.
+Cookie Game
 
-# Ejecutar
+Cookie Game es una aplicación web desarrollada para descubrir videojuegos, explorar diferentes categorías y administrar una lista de favoritos. El proyecto fue construido con React, Vite, React Router y Bootstrap, conservando los colores e imágenes de la versión original de la landing page.
 
-Instala Node.js 22.12 o superior. Abre una terminal en `cookie-game`:
+Ejecución del proyecto
 
+Para ejecutar la aplicación es necesario contar con Node.js versión 22.12 o superior. Una vez ubicado en la carpeta cookie-game, se deben instalar las dependencias mediante el comando npm ci y luego iniciar el entorno de desarrollo con npm run dev. Posteriormente, se accede desde el navegador a la dirección local generada por Vite.
 
-npm ci
-npm run dev
+Para generar la versión de producción se utiliza el comando npm run build y para visualizar el resultado compilado se ejecuta npm run preview.
 
+Rutas y navegación
 
-Abre la dirección que muestra Vite. Para compilar y revisar la versión de producción:
+La navegación de la aplicación se implementa mediante React Router. BrowserRouter se encuentra configurado en src/main.jsx y las rutas son definidas en src/App.jsx mediante Routes y Route. Los componentes Link y NavLink permiten la navegación entre páginas, mientras que useParams se utiliza para obtener el identificador de cada videojuego en la vista de detalle.
 
+Al desplegar la aplicación en producción, el servidor debe redirigir todas las solicitudes hacia index.html para garantizar el correcto funcionamiento de la aplicación de página única (SPA). No se recomienda abrir el archivo index.html directamente desde el sistema de archivos porque la aplicación requiere un servidor web para gestionar las rutas.
 
-npm run build
-npm run preview
+Estructura del proyecto
 
-
-# Rutas
-
-`BrowserRouter` está en `src/main.jsx`. Las rutas se declaran directamente con `Routes` y `Route` en `src/App.jsx`. `Link` permite cambiar de vista y `NavLink` resalta la opción actual. `useParams` obtiene el identificador del juego en la vista de detalle.
-
-Al publicar, el servidor debe redirigir las rutas de la aplicación a `index.html` para que los enlaces directos funcionen. Vite ya lo hace al desarrollar. No abrir `index.html` con doble clic: esta versión utiliza rutas y necesita el servidor de desarrollo o un alojamiento configurado para una SPA. Se retiró la antigua vista previa estática porque correspondía a la landing sin rutas.
-
-# estructura
-
-- `src/App.jsx`: rutas, estado de favoritos y función para agregar o quitar.
-- `src/main.jsx`: inicio de React, BrowserRouter y estilos.
-- `src/data/juegos.js`: datos e identificadores estables de los juegos.
-- `src/pages/`: Inicio, Catalogo, DetalleJuego, Favoritos y NoEncontrado.
-- `src/components/`: elementos reutilizables de la interfaz.
-- `src/components/Juegos.jsx`: lista de tarjetas.
-- `src/components/JuegoCard.jsx`: tarjeta con enlace al detalle y botón de favoritos.
-- `src/components/BotonFavorito.jsx`: botón compartido por tarjetas y detalle.
-- `src/assets/`: imágenes locales.
-- `src/styles.css`: colores, tarjetas y adaptación a pantallas pequeñas.
-
-
-
-Referencia: https://reactrouter.com/start/declarative/routing
+src/App.jsx contiene la configuración de rutas, el estado de favoritos y las funciones para agregar o eliminar 
